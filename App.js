@@ -1,21 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View} from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>i am jeevanantham S</Text>
-      <StatusBar style="auto" />
+    <View>
+
+      <View style={styles.top}></View>
+      <Text style={styles.container}>TVK</Text>
+      <View style={styles.bottom}></View>
+   
+    
+      
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'red',
-    alignItems: 'center',
-    color:'black',
-    justifyContent: 'center',
+    backgroundColor:'#808004',
+    textAlign:'center',
+    fontSize:80,
+    padding:50,
+    height:200,
+  },
+  top:{
+    margin:0,
+    borderWidth:10,
+    borderTopWidth:300,
+    borderColor:'red',
+    backgroundColor:'red',
+  },
+  bottom:{
+    marginTop:0,
+    marginBottom:0,
+    borderWidth:10,
+    borderTopWidth:300,
+    borderColor:'red',
+    backgroundColor:'red',
   },
 });
