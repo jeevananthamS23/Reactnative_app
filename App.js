@@ -1,40 +1,46 @@
-import { Button, StyleSheet, Text, View} from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View} from 'react-native';
 
 export default function App() {
   return (
-    <View>
-
-      <View style={styles.top}></View>
-      <Text style={styles.container}>TVK</Text>
-      <View style={styles.bottom}></View>
-   
-    
-      
+    <View style={styles.outercontainer}>
+      <View style={styles.inputbox}>
+        <TextInput style={styles.textbox} placeholder='Enter your goals' />
+        <Button title='Add Goal'/>
+      </View>  
+      <View style={styles.goallist}>
+        <Text>List of goals...</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor:'#808004',
-    textAlign:'center',
-    fontSize:80,
-    padding:50,
-    height:200,
+  outercontainer:{
+    flex:1,
+    paddingTop:50,
+    paddingHorizontal:16,
+    
   },
-  top:{
-    margin:0,
-    borderWidth:10,
-    borderTopWidth:300,
-    borderColor:'red',
-    backgroundColor:'red',
+  inputbox:{
+    flex:1,
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    marginBottom:24,
+    paddingRight:10,
+    borderBottomWidth:1,
+    borderBottomColor:'black',
   },
-  bottom:{
-    marginTop:0,
-    marginBottom:0,
-    borderWidth:10,
-    borderTopWidth:300,
-    borderColor:'red',
-    backgroundColor:'red',
-  },
+  textbox:{
+    borderWidth:1,
+    borderColor:'black',
+    padding:8,
+    width:'75%',
+    marginRight:8
+  }
+  ,
+  goallist:{
+    flex:3,
+    paddingTop:10,
+  }
 });
