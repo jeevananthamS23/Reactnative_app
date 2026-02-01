@@ -1,15 +1,17 @@
 import React,{useState} from 'react';
-import { Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View,ScrollView} from 'react-native';
 
 export default function App() {
   const [enteredvalue,setenteredvalue]=useState('');
+  const [goals,setgoals]=useState([]);
   function goalipt(goal){
-    console.log(goal);
     setenteredvalue(goal);
+
   }
 
   function setgoal(){
-    console.log(enteredvalue);
+    setgoals(currentgoals=>[...currentgoals,enteredvalue]);
+        setenteredvalue('');
   }
   return (
     <View style={styles.outercontainer}>
@@ -18,7 +20,12 @@ export default function App() {
         <Button title='Add Goal' onPress={setgoal}/>
       </View>  
       <View style={styles.goallist}>
-        <Text>List of goals...</Text>
+  <ScrollView horizontal={false}>
+      {goals.map((goal)=>
+          <View  key={goal} style={styles.goalitem}>
+            <Text style={styles.goaltext}>{goal}</Text>
+            </View>)}
+  </ScrollView>
       </View>
     </View>
   );
@@ -39,11 +46,11 @@ const styles = StyleSheet.create({
     marginBottom:24,
     paddingRight:10,
     borderBottomWidth:1,
-    borderBottomColor:'black',
+    borderBottomColor:'silver',
   },
   textbox:{
     borderWidth:1,
-    borderColor:'black',
+    borderColor:'silver',
     padding:8,
     width:'75%',
     marginRight:8
@@ -52,5 +59,17 @@ const styles = StyleSheet.create({
   goallist:{
     flex:3,
     paddingTop:10,
+  },
+  goalitem:{
+    margin:8,
+    padding:10,
+    borderWidth:2,
+    borderColor:'silver',
+    borderRadius:10,
+    backgroundColor:'lightgrey',
+    shadowColor:'white',
+  },
+  goaltext:{
+    color:'white',
   }
 });
