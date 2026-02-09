@@ -19,7 +19,7 @@ function Goalinput(props){
     
  <View style={styles.inputbox}>
    <TextInput style={styles.textbox} placeholder='Enter your goals'  value={enteredvalue} onChangeText={goalipt}/>
-   <Button title='Add Goal' onPress={addhandler}/>
+   <Button title='Add Goal' style={styles.button} onPress={addhandler}/>
  </View>
            
     ); 
@@ -36,13 +36,19 @@ const styles=StyleSheet.create({
     marginBottom:24,
     paddingRight:10,
     borderBottomWidth:1,
-    borderBottomColor:'silver',
+    borderBottomColor:'black',
   },
   textbox:{
     borderWidth:1,
-    borderColor:'silver',
+    borderColor:'black',
     padding:8,
     width:'75%',
-    marginRight:8
+    marginRight:8,
+    fontSize:20,
+  },
+  button:{
+    color:'white',
+    borderColor:'black',
+    fontSize:20,
   }
 })

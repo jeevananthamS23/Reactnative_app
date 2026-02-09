@@ -1,13 +1,19 @@
 import React from "react";
-import { StyleSheet,View ,Text,} from "react-native";
+import { StyleSheet,View ,Text,Pressable} from "react-native";
 
-function Goalitem({text}){
-   console.log(text);
+function Goalitem(props){
+function dlt(){
+  props.delete(props.id);
+}
      return (
-       <View style={styles.goalitem}>
+        <Pressable android_ripple={{color:'orange',borderless:false}} onPress={dlt}>
+
+             <View style={styles.goalitem}>
+               <Text style={styles.goaltext}>{props.text}</Text>
+             </View>
+
+        </Pressable>
      
-        <Text style={styles.goaltext}>{text}</Text>
-        </View>
      );
 }
 export default Goalitem;
@@ -17,12 +23,13 @@ const styles=StyleSheet.create({
     margin:8,
     padding:10,
     borderWidth:2,
-    borderColor:'silver',
+    borderColor:'black',
     borderRadius:10,
-    backgroundColor:'skyblue',
+    backgroundColor:'red',
     shadowColor:'white',
   },
   goaltext:{
-    color:'black',
+    fontSize:20,
+    color:'white',
   }
 })
