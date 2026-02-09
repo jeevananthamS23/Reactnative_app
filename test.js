@@ -1,10 +1,18 @@
-import React from "react";
-import { useState } from "react";
-export function hello(){
-    const [a,setArguments]=useState(0);
-    
-    return <>
-    <button onClick={() => setArguments(a+1)}>Increment</button>
-    <p>Value: {a}</p>
+import React, { useState } from 'react';
+import { ScrollView, Text, Button } from 'react-native';
+import Scroll1 from './Scrollview';
+import F1 from './Flatlist';
+import Section from './Section';
+import Vrl from './Virtualizedlist';
+
+export default function App1() {
+
+  return (
+    <>
+      {/* <Scroll1/> */}
+      {/* <F1/> */}
+      {/* <Section/> */}
+      <Vrl/>
     </>
+  );
 }
