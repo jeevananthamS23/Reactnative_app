@@ -25,7 +25,7 @@ const styles=StyleSheet.create({
     borderWidth:2,
     borderColor:'black',
     borderRadius:10,
-    backgroundColor:'red',
+    backgroundColor:'blue',
     shadowColor:'white',
   },
   goaltext:{
