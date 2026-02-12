@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { StyleSheet,View,FlatList,Button} from 'react-native';
+import { StyleSheet,View,FlatList,Button,StatusBar} from 'react-native';
 import Goalitem from './components/Goalitem';
 import Goalinput from './components/Goalinput';
 export default function App() {
@@ -27,6 +27,8 @@ export default function App() {
     });
   }
   return (
+    <>
+    <StatusBar/>
     <View style={styles.outercontainer}>
       <View style={styles.modalbtn}><Button title='Click Me' color="red" onPress={modalvisible}/></View>
       <Goalinput visible={ Modalvisible} close={modalclose}  onhandler={setgoal}/>
@@ -37,6 +39,7 @@ export default function App() {
         </View>
  
     </View>
+    </>
    );
 }
 
@@ -45,6 +48,7 @@ const styles = StyleSheet.create({
     flex:1,
     paddingTop:50,
     paddingHorizontal:16,
+    backgroundColor:"#000040",
     
   }
   ,
@@ -54,8 +58,7 @@ const styles = StyleSheet.create({
   },
   modalbtn:{
     borderWidth:2,
-    borderColor:'black',
-    borderRadius:2,
+    borderColor:'#C0C0C0',
+    borderRadius:5,
   }
- 
 });

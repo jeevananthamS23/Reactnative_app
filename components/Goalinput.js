@@ -16,7 +16,7 @@ function Goalinput(props){
     }
 
     return(      
- <Modal visible={props.visible} animationType="slide">
+ <Modal visible={props.visible} animationType="slide" style={styles.modal}>
    <View style={styles.inputbox}>
     <Image source={require('../assets/Images/Target.jpg')} style={styles.image}/>
    <TextInput style={styles.textbox} placeholder='Enter your goals'  value={enteredvalue} onChangeText={goalipt}/>
@@ -43,6 +43,7 @@ function Goalinput(props){
 export default Goalinput;
 
 const styles=StyleSheet.create({
+
     inputbox:{
     flex:1,
     justifyContent:'center',
@@ -54,13 +55,14 @@ const styles=StyleSheet.create({
     // borderBottomColor:'black',
   },
   textbox:{
-    borderWidth:1,
-    borderColor:'black',
+    borderWidth:2,
+    borderColor:'#000000',
     alignContent:'center',
     padding:8,
     width:'100%',
     marginRight:10,
     fontSize:20,
+    borderRadius:5,
   },
   image:{
     width:'100%',
